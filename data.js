@@ -16,7 +16,7 @@ window.PORTFOLIO_LINKS = [
   {
     id: "youtube-video-md",
     title: "Molecular Dynamics in Python",
-    description: "N=100 particles; box x,y,z in [-10,10] with reflecting walls; random seed=99999999 (same initial state every run); initial positions uniform in [-10,10] for each axis; initial velocities uniform in [-0.5,0.5] for each axis; initial accelerations computed from all pair interactions via \\(\\mathbf{a}_i=\\sum_{j\\neq i}\\frac{\\mathbf{r}_i-\\mathbf{r}_j}{\\lVert\\mathbf{r}_i-\\mathbf{r}_j\\rVert^3}\\); time step \\(\\Delta t=0.01\\).",
+    description: "N=100 particles; box x,y,z in [-10,10] with reflecting walls; random seed=99999999 (same initial state every run); initial positions uniform in [-10,10] for each axis; initial velocities uniform in [-0.5,0.5] for each axis; initial accelerations computed from all pair interactions via \\(\\mathbf{a}_i=\\sum_{j\\neq i}\\frac{\\mathbf{r}_i-\\mathbf{r}_j}{\\lVert\\mathbf{r}_i-\\mathbf{r}_j\\rVert^3}\\); time step \\(dt=0.01\\).",
     url: "https://youtu.be/MIYonKBwX7M",
     category: "Video"
   },
