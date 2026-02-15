@@ -1,0 +1,236 @@
+:root {
+  --bg-base: #f5f8ff;
+  --bg-accent: #e9f6ff;
+  --ink-strong: #11203c;
+  --ink-muted: #4c5d78;
+  --card-bg: #ffffff;
+  --card-border: #d7e1f4;
+  --tag-bg: #e6f2ff;
+  --tag-ink: #0d4678;
+  --btn-bg: #114ea4;
+  --btn-bg-hover: #0c3a7a;
+  --btn-ink: #ffffff;
+  --shadow: 0 16px 40px rgba(17, 32, 60, 0.12);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  color: var(--ink-strong);
+  background:
+    radial-gradient(circle at 10% -10%, #ffffff 0%, transparent 45%),
+    radial-gradient(circle at 90% -20%, #dcefff 0%, transparent 35%),
+    linear-gradient(150deg, var(--bg-base) 0%, var(--bg-accent) 65%, #f4fcff 100%);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(2px);
+}
+
+body::before {
+  width: 360px;
+  height: 360px;
+  top: -130px;
+  right: -110px;
+  background: rgba(17, 78, 164, 0.12);
+}
+
+body::after {
+  width: 280px;
+  height: 280px;
+  bottom: -100px;
+  left: -80px;
+  background: rgba(30, 136, 229, 0.14);
+}
+
+.page {
+  width: min(1080px, 92vw);
+  margin: 0 auto;
+  padding: 3.25rem 0 3.5rem;
+}
+
+.hero {
+  max-width: 720px;
+  margin-bottom: 1.8rem;
+  animation: fade-rise 550ms ease both;
+}
+
+.eyebrow {
+  margin: 0 0 0.25rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  font-weight: 600;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: clamp(2rem, 4.4vw, 3.3rem);
+  line-height: 1.05;
+}
+
+.subtitle {
+  margin: 0.85rem 0 0;
+  color: var(--ink-muted);
+  font-size: 1.02rem;
+  max-width: 62ch;
+}
+
+.links-section {
+  margin-top: 1.25rem;
+}
+
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.link-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+  padding: 1rem 1rem 1.1rem;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fade-rise 520ms ease forwards;
+  animation-delay: calc(var(--card-index) * 70ms + 90ms);
+}
+
+.category {
+  align-self: flex-start;
+  margin: 0;
+  padding: 0.2rem 0.56rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--tag-ink);
+  background: var(--tag-bg);
+  font-weight: 600;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.17rem;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+.card-description {
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: 0.95rem;
+  overflow-wrap: anywhere;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+}
+
+.visit-button {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-width: 88px;
+  border-radius: 9px;
+  padding: 0.45rem 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--btn-ink);
+  background: var(--btn-bg);
+  transition: transform 180ms ease, background-color 180ms ease;
+}
+
+.visit-button:hover {
+  background: var(--btn-bg-hover);
+  transform: translateY(-1px);
+}
+
+.visit-button:focus-visible {
+  outline: 3px solid rgba(17, 78, 164, 0.4);
+  outline-offset: 2px;
+}
+
+.empty-state {
+  margin: 0.7rem 0 0;
+  padding: 1rem;
+  border: 1px dashed var(--card-border);
+  border-radius: 10px;
+  background: #ffffffbb;
+  color: var(--ink-muted);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes fade-rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 700px) {
+  .page {
+    width: min(1080px, 94vw);
+    padding-top: 2.35rem;
+  }
+
+  .links-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
