@@ -16,7 +16,7 @@ window.PORTFOLIO_LINKS = [
   {
     id: "youtube-video-md",
     title: "Molecular Dynamics in Python",
-    description: "Simulation walkthrough covering molecular dynamics fundamentals.",
+    description: "Initial conditions: N=100 in a reflecting box [-10,10]^3, seed=99999999, positions U(-10,10), velocities U(-0.5,0.5), pair-force acceleration, dt=0.01.",
     url: "https://youtu.be/MIYonKBwX7M",
     category: "Video"
   },
