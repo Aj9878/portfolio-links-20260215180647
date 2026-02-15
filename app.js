@@ -127,6 +127,12 @@
     for (var j = 0; j < validLinks.length; j += 1) {
       container.appendChild(createCard(validLinks[j], j));
     }
+
+    if (window.MathJax && typeof window.MathJax.typesetPromise === "function") {
+      window.MathJax.typesetPromise([container]).catch(function (error) {
+        console.warn("MathJax rendering failed:", error);
+      });
+    }
   }
 
   if (document.readyState === "loading") {
