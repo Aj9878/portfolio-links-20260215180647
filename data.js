@@ -16,7 +16,7 @@ window.PORTFOLIO_LINKS = [
   {
     id: "youtube-video-md",
     title: "Molecular Dynamics in Python",
-    description: "N=100; reflecting box x,y,z in [-10,10]; seed=99999999; positions U(-10,10), velocities U(-0.5,0.5); a_i=sum_{j!=i}(r_i-r_j)/|r_i-r_j|^3; dt=0.01.",
+    description: "N=1000; reflecting box x,y,z in [-10,10]; seed=99999999; positions U(-10,10), velocities U(-0.5,0.5); a_i=sum_{j!=i}(r_i-r_j)/|r_i-r_j|^3; dt=0.01.",
     url: "https://youtu.be/MIYonKBwX7M",
     category: "Video"
   },
